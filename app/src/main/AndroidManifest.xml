@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mcm.rsun.mentalcalculationmaster.HomeActivity" />
         </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/title_activity_result"
+            android:parentActivityName=".GameScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mcm.rsun.mentalcalculationmaster.GameScreenActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,11 @@
     <string name="empty_string"></string>
     <string name="process">Process: </string>
     <string name="correct">Correct: </string>
+    <string name="plus"> + </string>
+    <string name="sub"> - </string>
+    <string name="multiply"> * </string>
+    <string name="divide"> / </string>
+    <string name="title_activity_result">ResultActivity</string>
 
 
 </resources>

@@ -86,7 +86,7 @@ public class GameScreenActivity extends AppCompatActivity {
                 break;
             case R.id.button_reset:
 //                System.out.println("reset clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
-
+                reset_input();
                 break;
             case R.id.button_enter:
 //                System.out.println("enter clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
@@ -101,7 +101,7 @@ public class GameScreenActivity extends AppCompatActivity {
                 generate_question();
                 break;
         }
-        System.out.println("current value = " + user_result + "////////////////");
+//        System.out.println("current value = " + user_result + "////////////////");
     }
 
 
