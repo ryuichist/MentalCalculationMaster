@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mcm.rsun.mentalcalculationmaster.DifficultySelectionActivity"
+    tools:showIn="@layout/activity_difficulty_selection">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_difficulty_title"
+        android:text = "@string/select_difficulty"
+        android:textSize="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:id = "@+id/digit_selection"
+        android:layout_below="@+id/select_difficulty_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/one_digit"
+            android:text="@string/one_digit"
+            android:onClick="select_digit"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/two_digit"
+            android:text="@string/two_digit"
+            android:onClick="select_digit"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/three_digit"
+            android:text="@string/three_digit"
+            android:onClick="select_digit"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id = "@+id/digit_selection_note"
+        android:text="digit_selection_note"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/digit_selection"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:id = "@+id/sign_selection"
+        android:layout_below="@+id/digit_selection_note"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/add"
+            android:onClick="sign_selection"
+            android:text="@string/add"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/add_subs"
+            android:onClick="sign_selection"
+            android:text="@string/add_subs"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/add_subs_mul"
+            android:onClick="sign_selection"
+            android:text="@string/add_subs_mul"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id = "@+id/sign_selection_note"
+        android:text="sign_selection_note"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/sign_selection"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="57dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:text="@string/exit"
+            android:layout_weight="1"
+            android:id="@+id/select_difficulty_exit_button"
+            android:onClick="exit_or_start"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/start"
+            android:layout_weight="1"
+            android:id="@+id/select_difficulty_start_button"
+            android:onClick="exit_or_start"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

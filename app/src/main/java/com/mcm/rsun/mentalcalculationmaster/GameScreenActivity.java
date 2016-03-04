@@ -1,5 +1,6 @@
 package com.mcm.rsun.mentalcalculationmaster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +19,8 @@ public class GameScreenActivity extends AppCompatActivity {
     public static final int MAX_PROBLEM_COUNT = 5;
     public static int current_count = 0;
     public static int correct_count = 0;
+    public static int difficulty_level = 0;
+    public static int number_range = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class GameScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        reset_count();
         generate_question();
     }
 
@@ -33,63 +36,51 @@ public class GameScreenActivity extends AppCompatActivity {
         EditText user_result_view = (EditText)findViewById(R.id.user_result);
         switch (v.getId()){
             case R.id.button1:
-//                System.out.println("1 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 1;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button2:
-//                System.out.println("2 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 2;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button3:
-//                System.out.println("3 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 3;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button4:
-//                System.out.println("4 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 4;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button5:
-//                System.out.println("5 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 5;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button6:
-//                System.out.println("6 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 6;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button7:
-//                System.out.println("7 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 7;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button8:
-//                System.out.println("8 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 8;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button9:
-//                System.out.println("9 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = user_result *10 + 9;
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button0:
-//                System.out.println("0 clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 if(user_result != 0){
                     user_result *=10;
                 }
                 user_result_view.setText(Integer.toString(user_result));
                 break;
             case R.id.button_reset:
-//                System.out.println("reset clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 reset_input();
                 break;
             case R.id.button_enter:
-//                System.out.println("enter clicked!!!!!!!!!!!!!!>>>>>>>>>>>>>>");
                 user_result = Integer.parseInt(user_result_view.getText().toString());
                 System.out.println("user input " + user_result);
                 if(user_result == correct_answer){
@@ -101,7 +92,6 @@ public class GameScreenActivity extends AppCompatActivity {
                 generate_question();
                 break;
         }
-//        System.out.println("current value = " + user_result + "////////////////");
     }
 
 
@@ -113,8 +103,8 @@ public class GameScreenActivity extends AppCompatActivity {
         correct_rate.setText(correct_count + " / " + MAX_PROBLEM_COUNT);
         reset_input();
         Random r = new Random();
-        num1 = r.nextInt(10);
-        num2 = r.nextInt(10);
+        num1 = r.nextInt(number_range);
+        num2 = r.nextInt(number_range);
         TextView num1_view = (TextView) findViewById(R.id.num1);
         TextView num2_view = (TextView) findViewById(R.id.num2);
         num1_view.setText(Integer.toString(num1));
@@ -126,5 +116,20 @@ public class GameScreenActivity extends AppCompatActivity {
         EditText user_result_view = (EditText)findViewById(R.id.user_result);
         user_result = 0;
         user_result_view.setText("");
+    }
+
+    public void reset_count(){
+        current_count = 0;
+        correct_count = 0;
+    }
+
+    public void exit_clicked(View view){
+        Intent exit_intent = new Intent(this, HomeActivity.class);
+        startActivity(exit_intent);
+    }
+
+    public void onDestory(){
+        super.onDestroy();
+        this.finish();
     }
 }

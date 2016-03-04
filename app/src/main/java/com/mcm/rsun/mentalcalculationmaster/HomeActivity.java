@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void startGame(View view){
-        Intent start_game_intent = new Intent(this, GameScreenActivity.class);
+        Intent start_game_intent = new Intent(this, DifficultySelectionActivity.class);
         startActivity(start_game_intent);
     }
 
