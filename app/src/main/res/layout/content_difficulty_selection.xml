@@ -24,10 +24,10 @@
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:id = "@+id/digit_selection"
-        android:layout_below="@+id/select_difficulty_title"
+        android:checkedButton="@+id/one_digit"
+        android:layout_below="@+id/digit_selection_note"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-
 
         <RadioButton
             android:layout_width="0dp"
@@ -35,21 +35,27 @@
             android:layout_weight="1"
             android:id = "@+id/one_digit"
             android:text="@string/one_digit"
-            android:onClick="select_digit"/>
+            android:onClick="select_digit"
+            android:textColor="@color/black"
+            android:background="@color/light"/>
         <RadioButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id = "@+id/two_digit"
             android:text="@string/two_digit"
-            android:onClick="select_digit"/>
+            android:onClick="select_digit"
+            android:textColor="@color/black"
+            android:background="@color/medium"/>
         <RadioButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id = "@+id/three_digit"
             android:text="@string/three_digit"
-            android:onClick="select_digit"/>
+            android:onClick="select_digit"
+            android:textColor="@color/black"
+            android:background="@color/heavy"/>
     </RadioGroup>
 
     <TextView
@@ -57,9 +63,9 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:id = "@+id/digit_selection_note"
-        android:text="digit_selection_note"
+        android:text="@string/digit_selection_note_default"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/digit_selection"
+        android:layout_below="@+id/select_difficulty_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -67,8 +73,9 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:orientation="horizontal"
-        android:id = "@+id/sign_selection"
-        android:layout_below="@+id/digit_selection_note"
+        android:id = "@+id/select_sign"
+        android:checkedButton="@+id/add_only"
+        android:layout_below="@+id/sign_selection_note"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -77,23 +84,29 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id = "@+id/add"
-            android:onClick="sign_selection"
-            android:text="@string/add"/>
+            android:id = "@+id/add_only"
+            android:onClick="select_sign"
+            android:text="@string/add_only"
+            android:textColor="@color/black"
+            android:background="@color/light"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/subs_only"
+            android:onClick="select_sign"
+            android:text="@string/subs_only"
+            android:textColor="@color/black"
+            android:background="@color/medium"/>
         <RadioButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id = "@+id/add_subs"
-            android:onClick="sign_selection"
-            android:text="@string/add_subs"/>
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id = "@+id/add_subs_mul"
-            android:onClick="sign_selection"
-            android:text="@string/add_subs_mul"/>
+            android:onClick="select_sign"
+            android:text="@string/add_subs"
+            android:textColor="@color/black"
+            android:background="@color/heavy"/>
     </RadioGroup>
 
     <TextView
@@ -101,11 +114,65 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:id = "@+id/sign_selection_note"
-        android:text="sign_selection_note"
+        android:text="@string/sign_selection_note_default"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/sign_selection"
+        android:layout_below="@+id/digit_selection"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="@string/problem_count_selection_title"
+        android:id="@+id/count_selection_title"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/select_sign"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id = "@+id/select_problem_count"
+        android:checkedButton="@+id/count_10"
+        android:layout_below="@+id/count_selection_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/count_10"
+            android:onClick="select_problem_count"
+            android:text="@string/count_10"
+            android:textColor="@color/black"
+            android:background="@color/light"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/count_20"
+            android:onClick="select_problem_count"
+            android:text="@string/count_20"
+            android:textColor="@color/black"
+            android:background="@color/medium"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id = "@+id/count_30"
+            android:onClick="select_problem_count"
+            android:text="@string/count_30"
+            android:textColor="@color/black"
+            android:background="@color/heavy"/>
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,7 +184,7 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:text="@string/exit"
             android:layout_weight="1"
             android:id="@+id/select_difficulty_exit_button"
@@ -125,13 +192,15 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:text="@string/start"
             android:layout_weight="1"
             android:id="@+id/select_difficulty_start_button"
             android:onClick="exit_or_start"/>
 
     </LinearLayout>
+
+
 
 
 </RelativeLayout>

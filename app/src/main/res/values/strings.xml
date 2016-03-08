@@ -10,14 +10,21 @@
     <string name="title_activity_result">ResultActivity</string>
     <string name="exit">Exit</string>
     <string name="title_activity_difficulty_selection">DifficultySelectionActivity</string>
-    <string name="select_difficulty">Select your difficulty</string>
+    <string name="select_difficulty">Select difficulty</string>
     <string name="equal_sign"> = </string>
-    <string name="one_digit">1 Digit</string>
-    <string name="two_digit">2 Digit</string>
-    <string name="three_digit">3 Digit</string>
-    <string name="add">Addition(+)</string>
-    <string name="add_subs">Addition(+)\nSubtraction(-)</string>
-    <string name="add_subs_mul">Addition(+)\nSubtraction(-)\nMultiply(*)</string>
+    <string name="one_digit">1 Digit\n0-9</string>
+    <string name="two_digit">2 Digit\n0-99</string>
+    <string name="three_digit">3 Digit\n0-999</string>
+    <string name="add_only">Addition(+) only</string>
+    <string name="subs_only">Subtraction(-)only</string>
+    <string name="add_subs">Addition(+) and\nSubtraction(-)</string>
+    <string name="digit_selection_note_default">Number range</string>
+    <string name="sign_selection_note_default">Signs</string>
+    <string name="problem_count_selection_title">Problem Count</string>
+    <string name="change_sign">+/-</string>
+    <string name="count_10">10</string>
+    <string name="count_20">20</string>
+    <string name="count_30">30</string>
 
 
 
