@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class GameScreenActivity extends AppCompatActivity {
     public static final String MINUS = "-";
     public static int sign = 1;
     public static boolean game_over = false;
+    public static Stopwatch s = new Stopwatch();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,9 @@ public class GameScreenActivity extends AppCompatActivity {
         reset_game_data();
         initialize_screen();
         generate_question();
+        Chronometer time = (Chronometer)findViewById(R.id.chronometer);
+        time.start();
+        s.start();
     }
 
     public void keyboard_clicked(View v){
@@ -63,7 +68,7 @@ public class GameScreenActivity extends AppCompatActivity {
             }else{
                 user_result_view.setText(Integer.toString(user_result));
             }
-            
+
         }
     }
 
@@ -116,9 +121,12 @@ public class GameScreenActivity extends AppCompatActivity {
                 if(current_count < DifficultySelectionActivity.max_problem_count){
                     generate_question();
                 }else{
+                    Chronometer time = (Chronometer)findViewById(R.id.chronometer);
+                    time.stop();
+                    s.stop();
+                    time.setText(Double.toString(s.time()));
                     game_over = true;
                 }
-//                System.out.println("current_count " + current_count + "~~~~~~~~~~~~~~~~~~~~~~~~~~" );
                 break;
         }
     }

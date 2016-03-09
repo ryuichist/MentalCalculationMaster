@@ -249,4 +249,11 @@
         android:layout_toRightOf="@+id/keyboard"
         android:layout_toEndOf="@+id/keyboard" />
 
+    <Chronometer
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:id="@+id/chronometer"
+        android:layout_above="@+id/keyboard"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
