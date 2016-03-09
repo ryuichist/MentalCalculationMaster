@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">心算大师</string>
+    <string name="action_settings">设置</string>
+    <string name="start_game">开始挑战</string>
+    <string name="start">开始游戏</string>
+    <string name="title_activity_game_screen">游戏主屏</string>
+    <string name="empty_string"></string>
+    <string name="process">当前进度: </string>
+    <string name="correct">正确题数: </string>
+    <string name="title_activity_result">游戏结果</string>
+    <string name="exit">退出</string>
+    <string name="title_activity_difficulty_selection">难度选择</string>
+    <string name="select_difficulty">难度选择</string>
+    <string name="equal_sign"> = </string>
+    <string name="one_digit">1位数\n0-9</string>
+    <string name="two_digit">2位数\n0-99</string>
+    <string name="three_digit">3位数\n0-999</string>
+    <string name="add_only">加法(+)</string>
+    <string name="subs_only">减法(-)</string>
+    <string name="add_subs">加法(+)减法(-)混合</string>
+    <string name="digit_selection_note_default">数字范围</string>
+    <string name="sign_selection_note_default">符号选择</string>
+    <string name="problem_count_selection_title">题目数量</string>
+    <string name="change_sign">+/-</string>
+    <string name="count_10">10道题</string>
+    <string name="count_20">20道题</string>
+    <string name="count_30">30道题</string>
+
+
+</resources>
