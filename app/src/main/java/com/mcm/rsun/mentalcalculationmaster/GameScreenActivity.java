@@ -63,6 +63,7 @@ public class GameScreenActivity extends AppCompatActivity {
             }else{
                 user_result_view.setText(Integer.toString(user_result));
             }
+            
         }
     }
 
