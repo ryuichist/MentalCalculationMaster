@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -27,6 +28,9 @@ public class GameScreenActivity extends AppCompatActivity {
     public static int sign = 1;
     public static boolean game_over = false;
     public static Stopwatch s = new Stopwatch();
+    public ProgressBar overall_progressbar;
+    public ProgressBar correct_rate_progressbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,11 @@ public class GameScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
+        overall_progressbar = (ProgressBar)findViewById(R.id.overall_progressBar);
+        overall_progressbar.setMax(DifficultySelectionActivity.max_problem_count);
+//        correct_rate_progressbar = ()
+
         reset_game_data();
         initialize_screen();
         generate_question();
@@ -143,6 +151,7 @@ public class GameScreenActivity extends AppCompatActivity {
         sign = 1;
         reset_input();
         current_count++;
+        overall_progressbar.setProgress(current_count);
         TextView current_process = (TextView) findViewById(R.id.current_process);
         current_process.setText(current_count + " / " + DifficultySelectionActivity.max_problem_count);
 
